@@ -25,4 +25,4 @@ function ModalControl() {
     )
 }
 
-export default ModalControl
+export default ModalControl;

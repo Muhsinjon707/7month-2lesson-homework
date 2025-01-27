@@ -7,7 +7,7 @@ import Home from './pages/Home'
 import Counter from './pages/Counter'
 import ShoppingCart from './pages/ShoppingCart'
 import Error from './pages/Error'
-import ModalControl from './pages/modalControl'
+import ModalControl from './pages/ModalControl'
 import Todo from './pages/Todo'
 import PlayersList from './pages/PlayersList'
 
