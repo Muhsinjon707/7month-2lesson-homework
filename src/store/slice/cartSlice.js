@@ -3,31 +3,39 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name: "cart",
     initialState: {
-        value: [
-            {
-                id: 1,
-                product: "Iphone 15pro max",
-                quantity: 8,
-            },
-            {
-                id: 2,
-                product: "Iphone 16pro max",
-                quantity: 9,
-            },
-            {
-                id: 3,
-                product: "Iphone 17pro max",
-                quantity: 10,
-            },
-        ]
+        value: []
     },
     reducers: {
-        addItem: (state) => {
+        addItem: (state, action) => {
+            const product = {
+                id: Date.now(),
+                name: action.payload['name'],
+                quantity: action.payload['quantity']
+            }
 
+            state.value.push(product);
         },
-        removeItem: () => { },
-        incrementQuantity: () => { },
-        decrementQuantity: () => { }
+        removeItem: (state, action) => {
+            state.value = state.value.filter(item => item.id !== action.payload);
+        },
+        incrementQuantity: (state, action) => {
+            state.value = state.value.map(item => {
+                if (item.id == action.payload) {
+                    item.quantity++;
+                }
+
+                return item;
+            })
+        },
+        decrementQuantity: (state, action) => {
+            state.value = state.value.map(item => {
+                if (item.id == action.payload) {
+                    item.quantity--;
+                }
+
+                return item;
+            })
+        }
     }
 })
 
