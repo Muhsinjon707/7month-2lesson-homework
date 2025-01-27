@@ -5,7 +5,7 @@ import MainLayout from './layout/MainLayout'
 
 import Home from './pages/Home'
 import Counter from './pages/Counter'
-import ShoppingCart from './pages/shoppingCart'
+import ShoppingCart from './pages/ShoppingCart'
 import Error from './pages/Error'
 import ModalControl from './pages/modalControl'
 import Todo from './pages/Todo'
